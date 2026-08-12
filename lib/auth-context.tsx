@@ -33,8 +33,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (savedToken && savedUser) {
       try {
-        setToken(savedToken);
-        setUser(JSON.parse(savedUser));
+        const parsedUser = JSON.parse(savedUser);
+        setTimeout(() => {
+          setToken(savedToken);
+          setUser(parsedUser);
+          setLoading(false);
+        }, 0);
+        return;
       } catch (e) {
         console.error('Failed to parse saved user', e);
         localStorage.removeItem('token');

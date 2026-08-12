@@ -7,11 +7,9 @@ import {
 } from '@icons-pack/react-simple-icons'
 
 const links = [
-    { label: 'Features', href: '#' },
-    { label: 'Pricing', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Fitur', href: '#features' },
+    { label: 'Alur Kerja', href: '#workflow' },
+    { label: 'Tentang', href: '#about' },
 ]
 
 const social = [
@@ -22,7 +20,7 @@ const social = [
 
 export default function Footer() {
     return (
-        <footer className="bg-background @container border-t py-12">
+        <footer id="about" className="bg-background @container border-t py-12">
             <div className="mx-auto max-w-2xl px-6">
                 <div className="flex flex-col items-center text-center">
                     <Link
@@ -54,7 +52,7 @@ export default function Footer() {
                             </Link>
                         ))}
                     </div>
-                    <p className="text-muted-foreground mt-8 text-sm">&copy; {2026} Veil.</p>
+                    <p className="text-muted-foreground mt-8 text-sm">&copy; {2026} Simple Warehouse.</p>
                 </div>
             </div>
         </footer>

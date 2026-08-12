@@ -36,14 +36,14 @@ export default function HeroSection() {
                         </div>
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
                             <div className="mx-auto max-w-md text-center">
-                                <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Ship faster. Integrate smarter.</h1>
-                                <p className="text-muted-foreground mt-4 text-balance">Veil is your all-in-one engine for adding seamless integrations to your app.</p>
+                                <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">Kelola Gudang Lebih Cerdas & Real-Time</h1>
+                                <p className="text-muted-foreground mt-4 text-balance">Solusi manajemen inventaris terpadu untuk melacak stok, mengoptimalkan lokasi rak, dan memantau transaksi keluar-masuk barang secara akurat.</p>
 
                                 <Button
                                     nativeButton={false}
                                     render={
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Start Building</span>
+                                        <Link href="/login">
+                                            <span className="text-nowrap">Mulai Kelola Inventaris</span>
                                             <ChevronRight className="opacity-50" />
                                         </Link>
                                     }

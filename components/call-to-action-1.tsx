@@ -7,14 +7,14 @@ export default function CallToAction() {
         <section className="bg-background @container py-24">
             <div className="mx-auto max-w-2xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance font-serif text-4xl font-medium">Ready to Get Started?</h2>
-                    <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">Join thousands of teams already using our platform to build better products faster.</p>
+                    <h2 className="text-balance font-serif text-4xl font-medium">Siap Mengoptimalkan Gudang Anda?</h2>
+                    <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">Mulailah mengelola inventaris secara transparan, aman, dan efisien mulai hari ini.</p>
                     <div className="mt-6 flex flex-wrap justify-center gap-3">
                         <Button
                             nativeButton={false}
                             render={
-                                <Link href="#link">
-                                    <span>Start Free Trial</span>
+                                <Link href="/login">
+                                    <span>Masuk Ke Sistem</span>
                                     <ChevronRight className="opacity-50" />
                                 </Link>
                             }
@@ -23,7 +23,7 @@ export default function CallToAction() {
                         <Button
                             nativeButton={false}
                             variant="secondary"
-                            render={<Link href="#link">Talk to Sales</Link>}
+                            render={<Link href="/">Beranda</Link>}
                         />
                     </div>
                 </div>

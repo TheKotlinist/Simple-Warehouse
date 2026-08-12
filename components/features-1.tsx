@@ -9,11 +9,11 @@ import { ClerkIconDark as Clerk } from '@/components/ui/svgs/clerk'
 
 export default function Features() {
     return (
-        <section className="bg-background @container py-24">
+        <section id="features" className="bg-background @container py-24">
             <div className="mx-auto max-w-2xl px-6">
                 <div>
-                    <h2 className="text-balance font-serif text-4xl font-medium">Powerful Features for Modern Teams</h2>
-                    <p className="text-muted-foreground mt-4 text-balance">Everything you need to build, connect, and scale your integrations effortlessly.</p>
+                    <h2 className="text-balance font-serif text-4xl font-medium">Fitur Unggulan Manajemen Gudang</h2>
+                    <p className="text-muted-foreground mt-4 text-balance">Semua alat yang Anda butuhkan untuk melacak stok barang, mengelola pengguna, dan memantau riwayat transaksi secara real-time.</p>
                 </div>
                 <div className="@xl:grid-cols-2 mt-12 grid gap-3 *:p-6">
                     <Card
@@ -21,8 +21,8 @@ export default function Features() {
                         className="row-span-2 grid grid-rows-subgrid"
                     >
                         <div className="space-y-2">
-                            <h3 className="text-foreground font-medium">Seamless Integrations</h3>
-                            <p className="text-muted-foreground text-sm">Connect your favorite tools and services with just a few clicks.</p>
+                            <h3 className="text-foreground font-medium">Integrasi API Cepat</h3>
+                            <p className="text-muted-foreground text-sm">Komunikasi mulus antara Next.js frontend dengan Express backend API yang aman.</p>
                         </div>
                         <div
                             aria-hidden
@@ -65,8 +65,8 @@ export default function Features() {
                         className="row-span-2 grid grid-rows-subgrid overflow-hidden"
                     >
                         <div className="space-y-2">
-                            <h3 className="text-foreground font-medium">Real-time Sync</h3>
-                            <p className="text-muted-foreground text-sm">Keep your data synchronized across all platforms automatically.</p>
+                            <h3 className="text-foreground font-medium">Sinkronisasi Stok Real-Time</h3>
+                            <p className="text-muted-foreground text-sm">Jumlah fisik stok produk otomatis berubah sesaat setelah transaksi masuk atau keluar dicatat oleh petugas.</p>
                         </div>
                         <div
                             aria-hidden
@@ -84,8 +84,8 @@ export default function Features() {
                         className="row-span-2 grid grid-rows-subgrid overflow-hidden"
                     >
                         <div className="space-y-2">
-                            <h3 className="text-foreground font-medium">Developer First</h3>
-                            <p className="text-muted-foreground mt-2 text-sm">Built with developers in mind, featuring comprehensive APIs and SDKs.</p>
+                            <h3 className="text-foreground font-medium">Proteksi & Otorisasi Peran</h3>
+                            <p className="text-muted-foreground mt-2 text-sm">Pembatasan ketat antara Staff Gudang dan Supervisor. Supervisor memiliki wewenang penuh atas master data dan laporan.</p>
                         </div>
                         <div
                             aria-hidden
@@ -100,15 +100,11 @@ export default function Features() {
                             <div />
                             <div />
                             <div />
-                            <div className="bg-primary!" />
-                            <div />
-                            <div />
                             <div />
                             <div className="bg-primary!" />
                             <div />
                             <div />
                             <div />
-                            <div />
                             <div className="bg-primary!" />
                             <div />
                             <div />
@@ -116,6 +112,10 @@ export default function Features() {
                             <div />
                             <div className="bg-primary!" />
                             <div />
+                            <div />
+                            <div />
+                            <div />
+                            <div className="bg-primary!" />
                             <div />
                             <div />
                             <div />
@@ -130,8 +130,8 @@ export default function Features() {
                         className="row-span-2 grid grid-rows-subgrid "
                     >
                         <div className="space-y-2">
-                            <h3 className="font-medium">Enterprise Ready</h3>
-                            <p className="text-muted-foreground text-sm">Scale confidently with enterprise-grade security and reliability.</p>
+                            <h3 className="font-medium">Laporan Stok Minimum</h3>
+                            <p className="text-muted-foreground text-sm">Dapatkan notifikasi instan dan laporan khusus untuk produk-produk yang stoknya menipis di bawah batas minimum.</p>
                         </div>
 
                         <div className="pointer-events-none relative mx-auto flex size-44 items-center justify-center pt-5">

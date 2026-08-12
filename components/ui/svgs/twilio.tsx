@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const Twilio = (props: SVGProps) => (
+const Twilio = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         viewBox="0 0 64 64"

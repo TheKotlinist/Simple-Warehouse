@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const Linear = (props: SVGProps) => (
+const Linear = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         fill="none"

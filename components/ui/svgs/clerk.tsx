@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const ClerkIconDark = (props: SVGProps) => (
+const ClerkIconDark = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         fill="none"
@@ -24,7 +24,7 @@ const ClerkIconDark = (props: SVGProps) => (
     </svg>
 )
 
-const ClerkIconLight = (props: SVGProps) => (
+const ClerkIconLight = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         fill="none"

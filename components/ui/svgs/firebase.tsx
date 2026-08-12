@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const Firebase = (props: SVGProps) => (
+const Firebase = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         fill="none"
@@ -25,7 +25,7 @@ const Firebase = (props: SVGProps) => (
     </svg>
 )
 
-const FirebaseFull = (props: SVGProps) => (
+const FirebaseFull = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         fill="none"

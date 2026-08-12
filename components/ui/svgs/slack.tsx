@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const Slack = (props: SVGProps) => (
+const Slack = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         viewBox="0 0 2447.6 2452.5"

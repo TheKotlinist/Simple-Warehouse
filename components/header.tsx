@@ -7,9 +7,9 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'Company', href: '#link' },
+    { name: 'Fitur Utama', href: '#features' },
+    { name: 'Alur Kerja', href: '#workflow' },
+    { name: 'Tentang Aplikasi', href: '#about' },
 ]
 
 export const HeroHeader = () => {
@@ -91,7 +91,7 @@ export const HeroHeader = () => {
                                 <Button
                                     nativeButton={false}
                                     render={
-                                        <Link href="#">
+                                        <Link href="/login">
                                             <span>Login</span>
                                         </Link>
                                     }
@@ -102,7 +102,7 @@ export const HeroHeader = () => {
                                 <Button
                                     nativeButton={false}
                                     render={
-                                        <Link href="#">
+                                        <Link href="/signup">
                                             <span>Sign Up</span>
                                         </Link>
                                     }
@@ -112,7 +112,7 @@ export const HeroHeader = () => {
                                 <Button
                                     nativeButton={false}
                                     render={
-                                        <Link href="#">
+                                        <Link href="/login">
                                             <span>Get Started</span>
                                         </Link>
                                     }

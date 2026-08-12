@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react'
 
-const Figma = (props: SVGProps) => (
+const Figma = (props: SVGProps<SVGSVGElement>) => (
     <svg
         {...props}
         viewBox="0 0 54 80"

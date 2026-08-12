@@ -82,7 +82,9 @@ export default function StaffDashboardPage({ isEmbedded = false }: { isEmbedded?
   };
 
   useEffect(() => {
-    fetchDashboardData();
+    setTimeout(() => {
+      fetchDashboardData();
+    }, 0);
   }, []);
 
   if (loadingData && products.length === 0) {

@@ -108,7 +108,9 @@ export default function SupervisorDashboardPage() {
       if (user.role !== 'supervisor') {
         router.push('/dashboard/staff');
       } else {
-        loadAllData();
+        setTimeout(() => {
+          loadAllData();
+        }, 0);
       }
     }
   }, [user, loading, router]);

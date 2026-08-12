@@ -46,7 +46,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         localStorage.removeItem('user');
       }
     }
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 0);
   }, []);
 
   const login = async (email: string, password: string) => {

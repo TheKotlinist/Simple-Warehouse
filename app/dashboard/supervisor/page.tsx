@@ -78,16 +78,6 @@ export default function SupervisorDashboardPage() {
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!loading && user) {
-      if (user.role !== 'supervisor') {
-        router.push('/dashboard/staff');
-      } else {
-        loadAllData();
-      }
-    }
-  }, [user, loading, router]);
-
   const loadAllData = async () => {
     setActionError(null);
     try {
@@ -112,6 +102,16 @@ export default function SupervisorDashboardPage() {
       setActionError(errMsg);
     }
   };
+
+  useEffect(() => {
+    if (!loading && user) {
+      if (user.role !== 'supervisor') {
+        router.push('/dashboard/staff');
+      } else {
+        loadAllData();
+      }
+    }
+  }, [user, loading, router]);
 
   const triggerSuccessMsg = (msg: string | null) => {
     setActionSuccess(msg);

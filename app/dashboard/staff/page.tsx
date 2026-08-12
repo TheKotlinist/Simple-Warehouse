@@ -60,10 +60,6 @@ export default function StaffDashboardPage({ isEmbedded = false }: { isEmbedded?
   const [showInModal, setShowInModal] = useState(false);
   const [showOutModal, setShowOutModal] = useState(false);
 
-  useEffect(() => {
-    fetchDashboardData();
-  }, []);
-
   const fetchDashboardData = async () => {
     setLoadingData(true);
     setErrorMsg(null);
@@ -84,6 +80,10 @@ export default function StaffDashboardPage({ isEmbedded = false }: { isEmbedded?
       setLoadingData(false);
     }
   };
+
+  useEffect(() => {
+    fetchDashboardData();
+  }, []);
 
   if (loadingData && products.length === 0) {
     return (

@@ -32,11 +32,13 @@ export default function ModalBarangKeluar({ isOpen, onClose, onSuccess, products
 
   useEffect(() => {
     if (isOpen) {
-      setNoDokumen(`DOC-${Date.now().toString().slice(-6)}`);
-      setTanggal(new Date().toISOString().substring(0, 10));
-      setKeterangan('');
-      setTxItems([{ id_produk: '', jumlah: 1 }]);
-      setFormError(null);
+      setTimeout(() => {
+        setNoDokumen(`DOC-${Date.now().toString().slice(-6)}`);
+        setTanggal(new Date().toISOString().substring(0, 10));
+        setKeterangan('');
+        setTxItems([{ id_produk: '', jumlah: 1 }]);
+        setFormError(null);
+      }, 0);
     }
   }, [isOpen]);
 

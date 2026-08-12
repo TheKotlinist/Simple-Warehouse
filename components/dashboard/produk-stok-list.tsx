@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Search, MapPin, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { MapPin, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 interface Product {
   id_produk: number;

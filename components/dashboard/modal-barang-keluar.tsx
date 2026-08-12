@@ -53,7 +53,7 @@ export default function ModalBarangKeluar({ isOpen, onClose, onSuccess, products
     setTxItems(newItems);
   };
 
-  const handleItemChange = (index: number, field: string, value: any) => {
+  const handleItemChange = (index: number, field: string, value: string | number) => {
     const newItems = [...txItems];
     newItems[index] = { ...newItems[index], [field]: value };
     setTxItems(newItems);
@@ -97,8 +97,9 @@ export default function ModalBarangKeluar({ isOpen, onClose, onSuccess, products
       });
       onSuccess();
       onClose();
-    } catch (err: any) {
-      setFormError(err.message || 'Gagal menyimpan transaksi barang keluar');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan transaksi barang keluar';
+      setFormError(errMsg);
     } finally {
       setIsSubmitting(false);
     }

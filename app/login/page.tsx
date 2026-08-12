@@ -36,8 +36,9 @@ export default function LoginPage() {
 
     try {
       await login(email, password);
-    } catch (err: any) {
-      setError(err.message || 'Login gagal. Silakan periksa kembali email dan password Anda.');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Login gagal. Silakan periksa kembali email dan password Anda.';
+      setError(errMsg);
       setIsSubmitting(false);
     }
   };

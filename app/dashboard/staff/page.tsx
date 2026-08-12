@@ -76,9 +76,10 @@ export default function StaffDashboardPage({ isEmbedded = false }: { isEmbedded?
       setProducts(prodRes || []);
       setTransactions(trxRes || []);
       setSuppliers(supRes || []);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setErrorMsg(err.message || 'Gagal memuat data dari server.');
+      const errMsg = err instanceof Error ? err.message : 'Gagal memuat data dari server.';
+      setErrorMsg(errMsg);
     } finally {
       setLoadingData(false);
     }

@@ -40,11 +40,11 @@ export default function CrudPengguna({ users, onRefresh, setError, setSuccess }:
 
     try {
       if (activeItem.id_pengguna) {
-        const payload: any = {
+        const payload: { nama: string; email: string; role: 'supervisor' | 'staff_gudang'; is_active: boolean; password?: string } = {
           nama: activeItem.nama,
           email: activeItem.email,
-          role: activeItem.role,
-          is_active: activeItem.is_active
+          role: activeItem.role as 'supervisor' | 'staff_gudang',
+          is_active: activeItem.is_active || false
         };
         if (activeItem.password) payload.password = activeItem.password;
         await api.put(`/pengguna/${activeItem.id_pengguna}`, payload);
@@ -59,8 +59,9 @@ export default function CrudPengguna({ users, onRefresh, setError, setSuccess }:
       }
       setShowModal(false);
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menyimpan pengguna');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan pengguna';
+      setError(errMsg);
     }
   };
 
@@ -70,8 +71,9 @@ export default function CrudPengguna({ users, onRefresh, setError, setSuccess }:
       await api.delete(`/pengguna/${id}`);
       setSuccess('Pengguna berhasil dinonaktifkan (Soft Delete)');
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menonaktifkan pengguna');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menonaktifkan pengguna';
+      setError(errMsg);
     }
   };
 
@@ -206,7 +208,7 @@ export default function CrudPengguna({ users, onRefresh, setError, setSuccess }:
                   <select
                     required
                     value={activeItem.role || ''}
-                    onChange={(e) => setActiveItem({ ...activeItem, role: e.target.value as any })}
+                    onChange={(e) => setActiveItem({ ...activeItem, role: e.target.value as 'supervisor' | 'staff_gudang' })}
                     className="w-full rounded-xl border border-input bg-background/50 px-3 py-2 text-sm outline-none focus:border-primary text-foreground"
                   >
                     <option value="staff_gudang">Staff Gudang</option>

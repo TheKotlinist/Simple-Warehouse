@@ -47,8 +47,9 @@ export default function CrudRak({ racks, onRefresh, setError, setSuccess }: Crud
       }
       setShowModal(false);
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menyimpan rak');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan rak';
+      setError(errMsg);
     }
   };
 
@@ -58,8 +59,9 @@ export default function CrudRak({ racks, onRefresh, setError, setSuccess }: Crud
       await api.delete(`/rak/${id}`);
       setSuccess('Rak berhasil dinonaktifkan');
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menghapus rak');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menghapus rak';
+      setError(errMsg);
     }
   };
 

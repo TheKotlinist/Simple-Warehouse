@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { api } from '@/lib/api';
 import { 
-  Package, LogOut, ArrowRight, RefreshCw, X, User, 
+  Package, LogOut, RefreshCw, X, 
   MapPin, Shield, CheckCircle2, AlertCircle, Menu, 
   FolderOpen, Truck, Users, ChevronRight
 } from 'lucide-react';
@@ -75,7 +75,6 @@ export default function SupervisorDashboardPage() {
   const [lowStockProducts, setLowStockProducts] = useState<Product[]>([]);
   const [reportTotal, setReportTotal] = useState(0);
 
-  const [isLoading, setIsLoading] = useState(true);
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
 
@@ -90,7 +89,6 @@ export default function SupervisorDashboardPage() {
   }, [user, loading, router]);
 
   const loadAllData = async () => {
-    setIsLoading(true);
     setActionError(null);
     try {
       const [prod, cat, sup, rk, usr, rpt] = await Promise.all([
@@ -108,11 +106,10 @@ export default function SupervisorDashboardPage() {
       setUsers(usr || []);
       setLowStockProducts(rpt?.data || []);
       setReportTotal(rpt?.total || 0);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      setActionError(err.message || 'Gagal memuat beberapa data dari backend');
-    } finally {
-      setIsLoading(false);
+      const errMsg = err instanceof Error ? err.message : 'Gagal memuat beberapa data dari backend';
+      setActionError(errMsg);
     }
   };
 

@@ -51,8 +51,9 @@ export default function CrudProduk({ products, categories, racks, onRefresh, set
       const prodDetail = await api.get(`/produk/${id}`);
       setActiveItem(prodDetail);
       setShowModal(true);
-    } catch (err: any) {
-      setError(err.message || 'Gagal mengambil detail produk');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal mengambil detail produk';
+      setError(errMsg);
     }
   };
 
@@ -74,8 +75,9 @@ export default function CrudProduk({ products, categories, racks, onRefresh, set
       }
       setShowModal(false);
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menyimpan produk');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan produk';
+      setError(errMsg);
     }
   };
 
@@ -85,8 +87,9 @@ export default function CrudProduk({ products, categories, racks, onRefresh, set
       await api.delete(`/produk/${id}`);
       setSuccess('Produk berhasil dinonaktifkan (Soft Delete)');
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menghapus produk');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menghapus produk';
+      setError(errMsg);
     }
   };
 

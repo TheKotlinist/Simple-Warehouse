@@ -45,8 +45,9 @@ export default function CrudKategori({ categories, onRefresh, setError, setSucce
       }
       setShowModal(false);
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menyimpan kategori');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan kategori';
+      setError(errMsg);
     }
   };
 
@@ -56,8 +57,9 @@ export default function CrudKategori({ categories, onRefresh, setError, setSucce
       await api.delete(`/kategori/${id}`);
       setSuccess('Kategori berhasil dinonaktifkan');
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menghapus kategori');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menghapus kategori';
+      setError(errMsg);
     }
   };
 

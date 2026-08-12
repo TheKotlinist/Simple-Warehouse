@@ -47,8 +47,9 @@ export default function CrudSupplier({ suppliers, onRefresh, setError, setSucces
       }
       setShowModal(false);
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menyimpan supplier');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menyimpan supplier';
+      setError(errMsg);
     }
   };
 
@@ -58,8 +59,9 @@ export default function CrudSupplier({ suppliers, onRefresh, setError, setSucces
       await api.delete(`/supplier/${id}`);
       setSuccess('Supplier berhasil dinonaktifkan');
       onRefresh();
-    } catch (err: any) {
-      setError(err.message || 'Gagal menghapus supplier');
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : 'Gagal menghapus supplier';
+      setError(errMsg);
     }
   };
 

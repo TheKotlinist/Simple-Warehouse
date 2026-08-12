@@ -4,6 +4,7 @@ export const getAllProduk = async (req, res) => {
   try {
     const { search } = req.query;
 
+    // benerin query untuk join tabel kategori dan lokasi_rak
     let query = `
       SELECT
         p.id_produk,
@@ -20,27 +21,24 @@ export const getAllProduk = async (req, res) => {
       JOIN lokasi_rak r
         ON p.id_lokasi = r.id_lokasi
       WHERE p.is_active = TRUE
-      ORDER BY p.id_produk;
     `;
 
     const values = [];
 
     if (search) {
-  query += `
-    WHERE
-      p.is_active = TRUE
-      AND (
-        p.nama_produk ILIKE $1
-        OR p.sku ILIKE $1
-      )
-  `;
-} else {
-  query += `
-    WHERE p.is_active = TRUE
-  `;
-}
+      query += `
+        AND (
+          p.nama_produk ILIKE $1
+          OR p.sku ILIKE $1
+        )
+      `;
 
-    query += ` ORDER BY p.id_produk;`;
+      values.push(`%${search}%`);
+    }
+
+    query += `
+      ORDER BY p.id_produk;
+    `;
 
     const result = await pool.query(query, values);
 
@@ -107,7 +105,7 @@ export const createProduk = async (req, res) => {
       id_lokasi
     } = req.body;
 
-    // Validasi sederhana
+    
     if (
       !sku ||
       !nama_produk ||
